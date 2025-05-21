@@ -2,22 +2,22 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>新鮮水果商品介紹</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>蔬菜商品介紹</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', 'Noto Sans TC', sans-serif;
-      background: linear-gradient(to right, #f3e5f5, #ffebee); /* 淡紫色到淡粉色的漸層背景 */
+      background: linear-gradient(to right, #e8f5e9, #f1f8e9);
       color: #333;
     }
 
     h1 {
       text-align: center;
       font-size: 2.5em;
-      color: #e57373; /* 柔和的紅色 */
+      color: #2e7d32;
       margin: 20px 0;
-      text-shadow: 1px 1px 2px #f48fb1; /* 淡粉色陰影 */
+      text-shadow: 1px 1px 2px #c8e6c9;
     }
 
     .layout {
@@ -40,7 +40,7 @@
 
     .sidebar h2 {
       font-size: 1.2em;
-      color: #e57373;
+      color: #2e7d32;
       margin-bottom: 15px;
     }
 
@@ -56,7 +56,7 @@
 
     .sidebar a {
       text-decoration: none;
-      color: #66bb6a;
+      color: #388e3c;
       font-weight: 500;
       display: block;
       padding: 8px 12px;
@@ -65,7 +65,7 @@
     }
 
     .sidebar a:hover {
-      background-color: #ffe0b2;
+      background-color: #c8e6c9;
     }
 
     .product-area {
@@ -82,7 +82,7 @@
 
     .back-button a {
       display: inline-block;
-      background: linear-gradient(to right, #ffab91, #ff8a65);
+      background: linear-gradient(to right, #a5d6a7, #81c784);
       color: #fff;
       text-decoration: none;
       padding: 10px 24px;
@@ -94,19 +94,17 @@
     }
 
     .back-button a:hover {
-      background: linear-gradient(to right, #ff8a65, #f44336);
+      background: linear-gradient(to right, #81c784, #66bb6a);
       box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
       transform: translateY(-2px);
     }
 
-    /* Set two-column layout for larger screens */
     .container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 24px;
       width: 100%;
       max-width: 1200px;
-      margin: 0 auto;
     }
 
     .card {
@@ -126,12 +124,12 @@
       width: 100%;
       height: 180px;
       object-fit: cover;
-      background-color: #ffccbc;
+      background-color: #ddd;
     }
 
     .card h3 {
       margin: 16px 0 8px;
-      color: #e57373;
+      color: #388e3c;
       font-size: 1.2em;
       text-align: center;
     }
@@ -145,17 +143,28 @@
     }
 
     @media (max-width: 768px) {
+      .layout {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+      }
+
+      .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
       .container {
-        grid-template-columns: 1fr 1fr; /* Two columns layout on medium screens */
+        grid-template-columns: 1fr 1fr;
         gap: 20px;
       }
 
       .card img {
-        height: 150px;
+        height: 160px;
       }
 
       .card h3 {
-        font-size: 1.1em;
+        font-size: 1em;
       }
 
       .card p {
@@ -169,32 +178,28 @@
     }
 
     @media (max-width: 480px) {
-      .container {
-        grid-template-columns: 1fr; /* Single column layout on small screens */
-      }
-
       .card img {
-        height: 120px;
-      }
-
-      .card h3 {
-        font-size: 1em;
-      }
-
-      .card p {
-        font-size: 12px;
+        height: 140px;
       }
 
       .back-button a {
         font-size: 0.85em;
         padding: 6px 18px;
       }
+
+      .card h3 {
+        font-size: 0.95em;
+      }
+
+      .card p {
+        font-size: 12px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>新鮮水果商品介紹</h1>
+  <h1>新鮮蔬菜商品介紹</h1>
 
   <div class="layout">
     <!-- 左側分類選單 -->
@@ -221,16 +226,17 @@
       <div class="container">
         <!-- 所有卡片放這裡 -->
         <!-- 示例： -->
-        <div class="card"><img src="2-1.jpg" alt="火龍果"><h3>火龍果</h3><p>外皮鮮豔，果肉甜美，富含維生素C與抗氧化物。</p></div>
-        <div class="card"><img src="2-2.jpg" alt="奇異果"><h3>奇異果</h3><p>含有豐富維生素C和膳食纖維，具有抗氧化作用。</p></div>
-        <div class="card"><img src="2-3.jpg" alt="柳丁"><h3>柳丁</h3><p>富含維生素C，清新酸甜，有助增強免疫力。</p></div>
-        <div class="card"><img src="2-4.jpg" alt="香瓜"><h3>香瓜</h3><p>口感細膩、清甜，含有豐富的水分與維生素。</p></div>
-        <div class="card"><img src="2-5.jpg" alt="蘋果"><h3>蘋果</h3><p>富含纖維與維生素C，有助消化並提高免疫力。</p></div>
-        <div class="card"><img src="2-6.jpg" alt="香蕉"><h3>香蕉</h3><p>高鉀且含有天然糖分，是快速補充能量的好選擇。</p></div>
-        <div class="card"><img src="2-7.jpg" alt="木瓜"><h3>木瓜</h3><p>富含酵素與維生素C，促進消化並有助皮膚健康。</p></div>
-        <div class="card"><img src="2-8.jpg" alt="哈密瓜"><h3>哈密瓜</h3><p>甜美多汁，富含水分與維生素A，適合夏季享用。</p></div>
+        <div class="card"><img src="1-1.jpg" alt="韭菜"><h3>韭菜</h3><p>口感清脆、富含維生素A與纖維。</p></div>
+        <div class="card"><img src="1-2.jpg" alt="蔥"><h3>蔥</h3><p>清爽解熱，可生食或入菜。</p></div>
+        <div class="card"><img src="1-3.jpg" alt="芹菜"><h3>芹菜</h3><p>含有豐富茄紅素，有助抗氧化。</p></div>
+        <div class="card"><img src="1-4.jpg" alt="高麗菜"><h3>高麗菜</h3><p>營養豐富，有助眼睛健康。</p></div>
+        <div class="card"><img src="1-5.jpg" alt="青江菜"><h3>青江菜</h3><p>鐵質豐富，適合補血養身。</p></div>
+        <div class="card"><img src="1-6.jpg" alt="龍鬚菜"><h3>龍鬚菜</h3><p>口感甘甜，是常見的家常蔬菜。</p></div>
+        <div class="card"><img src="1-7.jpg" alt="小白葉"><h3>小白葉</h3><p>富含葉綠素與膳食纖維，幫助消化。</p></div>
+        <div class="card"><img src="1-8.jpg" alt="大陸妹"><h3>大陸妹</h3><p>爽脆清甜，適合熱炒或涼拌。</p></div>
       </div>
     </div>
+
   </div>
 
 </body>

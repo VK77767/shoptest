@@ -3,44 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>新鮮水果商品介紹</title>
+  <title>商品展示</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', 'Noto Sans TC', sans-serif;
-      background: linear-gradient(to right, #f3e5f5, #ffebee); /* 淡紫色到淡粉色的漸層背景 */
-      color: #333;
+      font-family: 'Segoe UI', sans-serif; /* 統一字型 */
+      background: linear-gradient(to right, #e0d6b8, #d1c18f); /* 淺卡其色到淡橄欖綠漸層背景 */
+      color: #4e3629; /* 淡咖啡色文字 */
     }
 
     h1 {
       text-align: center;
       font-size: 2.5em;
-      color: #e57373; /* 柔和的紅色 */
+      color: #6a4e23; /* 濃郁的黃綠色調 */
       margin: 20px 0;
-      text-shadow: 1px 1px 2px #f48fb1; /* 淡粉色陰影 */
+      text-shadow: 1px 1px 2px #b3a97b; /* 淺綠色陰影效果 */
     }
 
     .layout {
       display: flex;
+      flex-direction: column;
       padding: 0 20px 40px;
-      gap: 30px;
-      flex-wrap: wrap; /* 使元素可以換行 */
+      gap: 20px;
     }
 
     .sidebar {
-      width: 200px;
-      min-width: 160px;
-      background-color: #ffffffc2;
+      width: 100%;
+      background-color: #f5f0e1; /* 淺米白色背景 */
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 12px; /* 微調邊框半徑 */
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       height: fit-content;
-      margin-bottom: 20px;
     }
 
     .sidebar h2 {
       font-size: 1.2em;
-      color: #e57373;
+      color: #6a4e23; /* 濃郁的黃綠色調 */
       margin-bottom: 15px;
     }
 
@@ -56,7 +54,7 @@
 
     .sidebar a {
       text-decoration: none;
-      color: #66bb6a;
+      color: #4e3629; /* 淡咖啡色文字 */
       font-weight: 500;
       display: block;
       padding: 8px 12px;
@@ -65,11 +63,10 @@
     }
 
     .sidebar a:hover {
-      background-color: #ffe0b2;
+      background-color: #d1c18f; /* 淡橄欖綠的懸停效果 */
     }
 
     .product-area {
-      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -82,7 +79,7 @@
 
     .back-button a {
       display: inline-block;
-      background: linear-gradient(to right, #ffab91, #ff8a65);
+      background: linear-gradient(to right, #a2c398, #6e8b3d); /* 淡橄欖綠到柔和綠的漸層 */
       color: #fff;
       text-decoration: none;
       padding: 10px 24px;
@@ -94,24 +91,22 @@
     }
 
     .back-button a:hover {
-      background: linear-gradient(to right, #ff8a65, #f44336);
+      background: linear-gradient(to right, #6e8b3d, #4e3629); /* 綠色到深咖啡色的懸停效果 */
       box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
       transform: translateY(-2px);
     }
 
-    /* Set two-column layout for larger screens */
     .container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 24px;
       width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
+      max-width: 100%;
     }
 
     .card {
       background-color: #fff;
-      border-radius: 12px;
+      border-radius: 12px; /* 微調邊框半徑 */
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       transition: transform 0.3s, box-shadow 0.3s;
@@ -126,75 +121,51 @@
       width: 100%;
       height: 180px;
       object-fit: cover;
-      background-color: #ffccbc;
+      background-color: #f5f0e1; /* 淺米白色背景 */
     }
 
     .card h3 {
       margin: 16px 0 8px;
-      color: #e57373;
+      color: #6a4e23; /* 濃郁的黃綠色調 */
       font-size: 1.2em;
       text-align: center;
     }
 
     .card p {
       font-size: 14px;
-      color: #666;
+      color: #4e3629; /* 淡咖啡色文字 */
       padding: 0 10px 16px;
       line-height: 1.5;
       text-align: center;
     }
 
+    /* 手機屏幕適配 */
     @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 1.8em;
+        margin: 20px 0;
+      }
+
+      .layout {
+        flex-direction: column;
+      }
+
       .container {
-        grid-template-columns: 1fr 1fr; /* Two columns layout on medium screens */
-        gap: 20px;
-      }
-
-      .card img {
-        height: 150px;
-      }
-
-      .card h3 {
-        font-size: 1.1em;
-      }
-
-      .card p {
-        font-size: 13px;
-      }
-
-      .back-button a {
-        font-size: 0.9em;
-        padding: 8px 20px;
+        grid-template-columns: 1fr; /* 單列顯示卡片 */
+        gap: 16px;
       }
     }
-
-    @media (max-width: 480px) {
-      .container {
-        grid-template-columns: 1fr; /* Single column layout on small screens */
-      }
-
-      .card img {
-        height: 120px;
-      }
-
-      .card h3 {
-        font-size: 1em;
-      }
-
-      .card p {
-        font-size: 12px;
-      }
-
-      .back-button a {
-        font-size: 0.85em;
-        padding: 6px 18px;
-      }
-    }
+  </style>
   </style>
 </head>
 <body>
 
-  <h1>新鮮水果商品介紹</h1>
+  <h1>常溫商品介紹</h1>
 
   <div class="layout">
     <!-- 左側分類選單 -->
@@ -221,16 +192,53 @@
       <div class="container">
         <!-- 所有卡片放這裡 -->
         <!-- 示例： -->
-        <div class="card"><img src="2-1.jpg" alt="火龍果"><h3>火龍果</h3><p>外皮鮮豔，果肉甜美，富含維生素C與抗氧化物。</p></div>
-        <div class="card"><img src="2-2.jpg" alt="奇異果"><h3>奇異果</h3><p>含有豐富維生素C和膳食纖維，具有抗氧化作用。</p></div>
-        <div class="card"><img src="2-3.jpg" alt="柳丁"><h3>柳丁</h3><p>富含維生素C，清新酸甜，有助增強免疫力。</p></div>
-        <div class="card"><img src="2-4.jpg" alt="香瓜"><h3>香瓜</h3><p>口感細膩、清甜，含有豐富的水分與維生素。</p></div>
-        <div class="card"><img src="2-5.jpg" alt="蘋果"><h3>蘋果</h3><p>富含纖維與維生素C，有助消化並提高免疫力。</p></div>
-        <div class="card"><img src="2-6.jpg" alt="香蕉"><h3>香蕉</h3><p>高鉀且含有天然糖分，是快速補充能量的好選擇。</p></div>
-        <div class="card"><img src="2-7.jpg" alt="木瓜"><h3>木瓜</h3><p>富含酵素與維生素C，促進消化並有助皮膚健康。</p></div>
-        <div class="card"><img src="2-8.jpg" alt="哈密瓜"><h3>哈密瓜</h3><p>甜美多汁，富含水分與維生素A，適合夏季享用。</p></div>
-      </div>
-    </div>
+
+    <!-- 商品區 -->
+  <div class="card">
+  <img src="6-1.jpg" alt="鮮蝦風味泡麵">
+  <h3>鮮蝦風味泡麵</h3>
+  <p>鮮蝦風味泡麵，採用天然海鮮香氣，融合鮮蝦味道，帶來美味的海味體驗。</p>
+</div>
+<div class="card">
+  <img src="6-2.jpg" alt="牛肉風味泡麵">
+  <h3>牛肉風味泡麵</h3>
+  <p>牛肉風味泡麵，精選牛肉香料，鮮嫩牛肉與豐富湯底，讓你品味地道牛肉風味。</p>
+</div>
+<div class="card">
+  <img src="6-3.jpg" alt="燉牛肉風味泡麵">
+  <h3>燉牛肉風味泡麵</h3>
+  <p>燉牛肉風味泡麵，搭配精心燉煮的牛肉，湯底濃郁，帶來豐富的口感層次。</p>
+</div>
+<div class="card">
+  <img src="6-4.jpg" alt="酸辣蝦味泡麵">
+  <h3>酸辣蝦味泡麵</h3>
+  <p>酸辣蝦味泡麵，辣中帶酸，特製湯底搭配鮮蝦味，辣味十足，讓人胃口大開。</p>
+</div>
+<div class="card">
+  <img src="6-5.jpg" alt="辣味拌炒泡麵">
+  <h3>辣味拌炒泡麵</h3>
+  <p>辣味拌炒泡麵，獨特香辣醬料，搭配炒麵風味，挑戰你對辣味的極限。</p>
+</div>
+<div class="card">
+  <img src="6-6.jpg" alt="青檸牛肉湯泡麵">
+  <h3>青檸牛肉湯泡麵</h3>
+  <p>青檸牛肉湯泡麵，清新青檸的酸味與牛肉湯底融合，帶來清爽又濃郁的口感。</p>
+</div>
+<div class="card">
+  <img src="6-7.jpg" alt="拌麵">
+  <h3>拌麵</h3>
+  <p>拌麵，選用彈牙麵條，搭配特製醬料，混合成爽口美味的經典拌麵。</p>
+</div>
+<div class="card">
+  <img src="6-8.jpg" alt="炊粉">
+  <h3>炊粉</h3>
+  <p>炊粉，採用優質米粉，軟嫩可口，適合搭配各式菜餚或湯品。</p>
+</div>
+
+   
+  </div>
+</div>
+
   </div>
 
 </body>

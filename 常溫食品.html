@@ -1,30 +1,33 @@
+
+html
+複製
+編輯
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>新鮮水果商品介紹</title>
+  <title>常溫商品介紹</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', 'Noto Sans TC', sans-serif;
-      background: linear-gradient(to right, #f3e5f5, #ffebee); /* 淡紫色到淡粉色的漸層背景 */
+      background: linear-gradient(to right, #fff8e1, #ffecb3); /* 米白色到淡黃色的漸層背景 */
       color: #333;
     }
 
     h1 {
       text-align: center;
       font-size: 2.5em;
-      color: #e57373; /* 柔和的紅色 */
-      margin: 20px 0;
-      text-shadow: 1px 1px 2px #f48fb1; /* 淡粉色陰影 */
+      color: #f57c00; /* 橙色，柔和且溫暖 */
+      margin: 20px 0 20px 270px; /* 將左邊距離調整為 270px，讓標題往右移動 */
+      text-shadow: 1px 1px 2px #ffcc80; /* 淡橙色陰影 */
     }
 
     .layout {
       display: flex;
       padding: 0 20px 40px;
       gap: 30px;
-      flex-wrap: wrap; /* 使元素可以換行 */
     }
 
     .sidebar {
@@ -35,12 +38,11 @@
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       height: fit-content;
-      margin-bottom: 20px;
     }
 
     .sidebar h2 {
       font-size: 1.2em;
-      color: #e57373;
+      color: #f57c00; /* 橙色 */
       margin-bottom: 15px;
     }
 
@@ -56,7 +58,7 @@
 
     .sidebar a {
       text-decoration: none;
-      color: #66bb6a;
+      color: #8d6e63; /* 深米色 */
       font-weight: 500;
       display: block;
       padding: 8px 12px;
@@ -65,7 +67,7 @@
     }
 
     .sidebar a:hover {
-      background-color: #ffe0b2;
+      background-color: #fff3e0; /* 淡黃色的懸停效果 */
     }
 
     .product-area {
@@ -82,7 +84,7 @@
 
     .back-button a {
       display: inline-block;
-      background: linear-gradient(to right, #ffab91, #ff8a65);
+      background: linear-gradient(to right, #ffe082, #ffca28); /* 淡黃到明亮黃的漸層 */
       color: #fff;
       text-decoration: none;
       padding: 10px 24px;
@@ -94,19 +96,17 @@
     }
 
     .back-button a:hover {
-      background: linear-gradient(to right, #ff8a65, #f44336);
+      background: linear-gradient(to right, #ffca28, #f57c00); /* 黃色到橙色的懸停效果 */
       box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
       transform: translateY(-2px);
     }
 
-    /* Set two-column layout for larger screens */
     .container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 24px;
       width: 100%;
       max-width: 1200px;
-      margin: 0 auto;
     }
 
     .card {
@@ -126,75 +126,91 @@
       width: 100%;
       height: 180px;
       object-fit: cover;
-      background-color: #ffccbc;
+      background-color: #fff8e1; /* 淡米白色背景 */
     }
 
     .card h3 {
       margin: 16px 0 8px;
-      color: #e57373;
+      color: #f57c00; /* 橙色字體 */
       font-size: 1.2em;
       text-align: center;
     }
 
     .card p {
       font-size: 14px;
-      color: #666;
+      color: #8d6e63; /* 深米色文字 */
       padding: 0 10px 16px;
       line-height: 1.5;
       text-align: center;
     }
 
+    /* 手機端樣式調整 */
     @media (max-width: 768px) {
+      .layout {
+        flex-direction: column; /* 切換為垂直排列 */
+        align-items: center;
+      }
+
+      .sidebar {
+        width: 100%; /* 讓左側選單在小螢幕下寬度為100% */
+        margin-bottom: 20px; /* 增加間距 */
+      }
+
+      .product-area {
+        width: 100%;
+        padding: 0 20px;
+      }
+
       .container {
-        grid-template-columns: 1fr 1fr; /* Two columns layout on medium screens */
-        gap: 20px;
+        grid-template-columns: 1fr 1fr; /* 手機上兩列佈局 */
+        gap: 16px;
       }
 
       .card img {
-        height: 150px;
+        height: 150px; /* 改小圖片高度 */
       }
 
       .card h3 {
-        font-size: 1.1em;
+        font-size: 1.1em; /* 調整標題大小 */
       }
 
       .card p {
-        font-size: 13px;
+        font-size: 13px; /* 改小文字大小 */
       }
 
       .back-button a {
         font-size: 0.9em;
-        padding: 8px 20px;
+        padding: 8px 20px; /* 減小按鈕大小 */
       }
     }
 
     @media (max-width: 480px) {
       .container {
-        grid-template-columns: 1fr; /* Single column layout on small screens */
+        grid-template-columns: 1fr; /* 小螢幕上為單列布局 */
       }
 
       .card img {
-        height: 120px;
+        height: 120px; /* 改小圖片高度 */
       }
 
       .card h3 {
-        font-size: 1em;
+        font-size: 1em; /* 調整標題大小 */
       }
 
       .card p {
-        font-size: 12px;
+        font-size: 12px; /* 調整文字大小 */
       }
 
       .back-button a {
         font-size: 0.85em;
-        padding: 6px 18px;
+        padding: 6px 18px; /* 減小按鈕大小 */
       }
     }
   </style>
 </head>
 <body>
 
-  <h1>新鮮水果商品介紹</h1>
+  <h1>常溫商品介紹</h1>
 
   <div class="layout">
     <!-- 左側分類選單 -->
@@ -219,18 +235,18 @@
 
       <!-- 商品卡片區 -->
       <div class="container">
-        <!-- 所有卡片放這裡 -->
-        <!-- 示例： -->
-        <div class="card"><img src="2-1.jpg" alt="火龍果"><h3>火龍果</h3><p>外皮鮮豔，果肉甜美，富含維生素C與抗氧化物。</p></div>
-        <div class="card"><img src="2-2.jpg" alt="奇異果"><h3>奇異果</h3><p>含有豐富維生素C和膳食纖維，具有抗氧化作用。</p></div>
-        <div class="card"><img src="2-3.jpg" alt="柳丁"><h3>柳丁</h3><p>富含維生素C，清新酸甜，有助增強免疫力。</p></div>
-        <div class="card"><img src="2-4.jpg" alt="香瓜"><h3>香瓜</h3><p>口感細膩、清甜，含有豐富的水分與維生素。</p></div>
-        <div class="card"><img src="2-5.jpg" alt="蘋果"><h3>蘋果</h3><p>富含纖維與維生素C，有助消化並提高免疫力。</p></div>
-        <div class="card"><img src="2-6.jpg" alt="香蕉"><h3>香蕉</h3><p>高鉀且含有天然糖分，是快速補充能量的好選擇。</p></div>
-        <div class="card"><img src="2-7.jpg" alt="木瓜"><h3>木瓜</h3><p>富含酵素與維生素C，促進消化並有助皮膚健康。</p></div>
-        <div class="card"><img src="2-8.jpg" alt="哈密瓜"><h3>哈密瓜</h3><p>甜美多汁，富含水分與維生素A，適合夏季享用。</p></div>
+        <!-- 商品卡片 -->
+        <div class="card"><img src="4-1.jpg" alt="紅雞蛋"><h3>紅雞蛋</h3><p>紅色雞蛋外殼，富含蛋白質和維生素B12，對健康有益，口感鮮美。</p></div>
+        <div class="card"><img src="4-2.jpg" alt="白雞蛋"><h3>白雞蛋</h3><p>外殼為白色，含有豐富的蛋白質，對人體發育有益，可做各式料理。</p></div>
+        <div class="card"><img src="4-3.jpg" alt="紅蔥頭"><h3>紅蔥頭</h3><p>富含天然抗氧化成分，具有抗發炎的特性，常用於調味。</p></div>
+        <div class="card"><img src="4-4.jpg" alt="紅辣椒"><h3>紅辣椒</h3><p>辣椒富含維生素C，有助於提升免疫力，並具抗氧化功效。</p></div>
+        <div class="card"><img src="4-5.jpg" alt="蒜頭"><h3>蒜頭</h3><p>大蒜含有強效的抗菌物質，有助於提升免疫系統，並對心臟健康有益。</p></div>
+        <div class="card"><img src="4-6.jpg" alt="薑"><h3>薑</h3><p>薑具有消炎、促進血液循環的功效，常見於料理或藥膳。</p></div>
+        <div class="card"><img src="4-7.jpg" alt="糖果"><h3>糖果</h3><p>糖果是一種甜食，適合用來滿足甜食需求，但應適量食用。</p></div>
+        <div class="card"><img src="4-8.jpg" alt="粽葉"><h3>粽葉</h3><p>粽葉具有獨特的香氣，常用來包粽子或加入料理中，為菜肴增添風味。</p></div>
       </div>
     </div>
+
   </div>
 
 </body>
